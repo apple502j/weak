@@ -6,4 +6,4 @@ machine:
 
 test:
   post:
-    - python test.py
+    - python3 test.py

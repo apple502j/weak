@@ -1,0 +1,9 @@
+machine:
+  python:
+    version: 3.6.0
+  timezone:
+    Asia/Tokyo
+
+test:
+  post:
+    - python test.py

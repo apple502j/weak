@@ -1,0 +1,40 @@
+NOTE: WEAK is actually weak. Please do not use this for important situations.
+(Like encrypting passwords or documents)
+
+=====================     WEAK: Encrypt Anything Known     =====================
+
+#### What is this?
+ WEAK encrypts something. This is useful when saving a game or sending a secret
+message.
+
+#### How to use it?
+ To use it, for the first time, please download this at GitHub available here:
+<https://github.com/apple502j/weak> PyPI support will be added soon.
+
+ After getting this, install it via "python3 setup.py install". This will add
+this library to the computer. Please make sure to use Python 3.6 or later:
+It won't work if the version is less than that, especially for Python 2.x.
+
+ This library has two functions: One to generate a key, the other to actually
+encrypt/decrypt something. The first function is generateKeys() which will
+return a tuple of the public key and the private key. It will always return
+different values. The second function is crypt(text,key). The public key is
+needed when decrypting something encrypted via private key; same as private
+key. When a wrong key is passed, it will return an exception.
+
+#### Examples
+
+import weak
+public,private=weak.generateKeys()
+print(public)
+print(private)
+text=input("What to encrypt?")
+encrypted=weak.crypt(text,public)
+decrypted=weak.crypt(text,private)
+print(encrypted)
+print(decrypted)
+
+#### Misc
+License             GPLv3+
+Creator             apple502j
+Website             https://github.com/apple502j/weak

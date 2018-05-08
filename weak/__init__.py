@@ -7,6 +7,6 @@ needed when decrypting something encrypted via private key; same as private
 key. When a wrong key is passed, it will return an exception.
 """
 
-from .crypto import generateKeys,crypt
+from .crypto import generateKeys, crypt
 
-__all__=['generateKeys','crypt']
+__all__ = ['generateKeys', 'crypt']

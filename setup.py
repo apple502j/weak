@@ -1,12 +1,12 @@
-from setuptools import setup,find_packages
-from sys import exit
+"""Set up the package."""
 from platform import python_version
+from setuptools import setup, find_packages
 
 with open("README") as file:
-    longdesc=file.read()
+    longdesc = file.read() # pylint: disable=invalid-name
 
 if python_version() < "3.6.0":
-	exit(1)
+    raise SystemExit(1)
 
 setup(
     name="weak",

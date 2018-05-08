@@ -1,14 +1,11 @@
 import crypto
 
-keys=crypto.generateKeys()
-publicKey=keys[0]
-privateKey=keys[1]
-print("Generate your key.")
-print("PUBLIC:\n" + publicKey)
-print("\nPRIVATE:\n"+privateKey)
+PUBLIC_KEY, PRIVATE_KEY = crypto.generateKeys()
+print("Generated your key.")
+print("PUBLIC:\n" + PUBLIC_KEY)
+print("\nPRIVATE:\n" + PRIVATE_KEY)
 
-encryptText=input("What should I encrypt? (using private key) >>>")
-encrypted=crypto.crypt(encryptText,privateKey)
-print(encrypted)
-decrypted=crypto.crypt(encrypted,publicKey)
-print(decrypted)
+_ = crypto.crypt(input("What should I encrypt? (using private key) >>> "),
+                 PRIVATE_KEY)
+print(_)
+print(crypto.crypt(_, PUBLIC_KEY))

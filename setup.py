@@ -1,7 +1,12 @@
 from setuptools import setup,find_packages
+from sys import exit
+from platform import python_version
 
 with open("README") as file:
     longdesc=file.read()
+
+if python_version() < "3.6.0":
+	exit(1)
 
 setup(
     name="weak",
